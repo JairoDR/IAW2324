@@ -18,6 +18,5 @@ Introducción
 4. **Práctica 4**
 5. **Práctica 5**
 
-[Github][github]
-[github]: (https://github.com/JairoDR/IAW2324)
+[Github](https://github.com/JairoDR/IAW2324)
 ## Segundo trimestre
