@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <label for="">Número 1<input type="text" id="numero1"></label>
+    <label for="">Número 2<input type="text" id="numero2"></label>
+    <button onclick="sumar(); presentarResultado();">+</button>
+    <button onclick="restar(); presentarResultado();">-</button>
+    <button onclick="multiplicar(); presentarResultado();">*</button>
+    <button onclick="dividir(); presentarResultado();">/</button>
+    <button onclick="potencia(); presentarResultado();">^</button>
+    <p id="resultado"></p>
+    <script>
+        var resultado=0;
+        function sumar() {
+            let x = parseFloat(document.getElementById("numero1").value);
+            let y = parseFloat(document.getElementById("numero2").value);
+            resultado = x+y;
+        }
+        function restar() {
+            let x = parseFloat(document.getElementById("numero1").value);
+            let y = parseFloat(document.getElementById("numero2").value);
+            resultado = x-y;
+        }
+        function multiplicar() {
+            let x = parseFloat(document.getElementById("numero1").value);
+            let y = parseFloat(document.getElementById("numero2").value);
+            resultado = x*y;
+        }
+        function potencia() {
+            let x = parseFloat(document.getElementById("numero1").value);
+            let y = parseFloat(document.getElementById("numero2").value);
+            resultado = Math.pow(x,y);
+        }
+        function dividir() {
+            let x = parseFloat(document.getElementById("numero1").value);
+            let y = parseFloat(document.getElementById("numero2").value);
+            if (y==0)  {
+                resultado = "No se puede."
+            }
+            else {
+                resultado = x/y;
+            }
+        }
+        function presentarResultado(){
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        // Cómo linkear un archivo Javascript: 
+    </script>
+</body>
+</html>
