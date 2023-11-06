@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculos</title>
+</head>
+<style>
+#rojo {
+    background-color: red;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+#verde {
+    background-color: green;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+#azul {
+    background-color: blue;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+</style>
+<body>
+<div id="rojo"></div>
+<div id="verde"></div>
+<div id="azul"></div>
+<button onclick="Cambiar ('rojo', 'red')">Cambiar</button>
+<button onclick="Cambiar ('verde', 'green')">Cambiar</button>
+<button onclick="Cambiar ('azul', 'blue')">Cambiar</button>
+    
+</body>
+<script>
+function Cambiar(id, color) {
+    let circulo = document.getElementById(id).style.backgroundColor;
+    if(circulo == "transparent") {
+        document.getElementById(id).style.backgroundColor = color;
+    }
+    else {
+        document.getElementById(id).style.backgroundColor = 'transparent'; 
+    }
+}
+</script>
+</html>
