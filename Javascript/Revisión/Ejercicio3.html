@@ -6,13 +6,30 @@
     <title>DNI</title>
 </head>
 <body>
-    <div id="dni"></div>
-    <div id="resultado"></div>
+	<h1>Cálculo de letra del DNI</h1>
+	<form>
+		<label for="dni">Introduce tu número de DNI (8 dígitos):</label><br>
+		<input type="text" id="dni" name="dni" minlength="8" maxlength="8" required><br>
+		<input type="submit" value="Calcular letra">
+	</form>
+	<div id="resultado"></div>
+	<script>
+		function calcularLetra() {
+			var dni = document.getElementById("dni").value;
+			if (dni.length != 8) {
+				document.getElementById("resultado").innerHTML = "El número de DNI debe tener 8 dígitos.";
+			} else {
+				var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+				var resto = dni % 23;
+				var letra = letras.charAt(resto);
+				document.getElementById("resultado").innerHTML = "La letra correspondiente al número de DNI " + dni + " es " + letra;
+			}
+		}
+		var form = document.querySelector("form");
+		form.addEventListener("submit", function(event) {
+			event.preventDefault();
+			calcularLetra();
+		});
+	</script>
 </body>
-<script>
-    function letra() {
-        let dni = document.getElementById("dni").value;
-        
-    }
-</script>
 </html>
