@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+<p>Nombre: <input type="text" id="nombre"></p>
+<p>Apellidos: <input type="text" id="apellidos"></p>
+<p>Teléfono: <input type="number" id="telefono"></p>
+<button onclick="confirmar()">Confirmar</button>
+<button onclick="localStorage.clear()">Limpiar</button>
+<p id="resultado"></p>
+
+<script>
+    recogida();
+    //localStorage.clear();
+    function recogida() {
+        var nombre = localStorage.getItem('nombre');
+        var apellidos = localStorage.getItem('apellidos'); 
+        var telefono = localStorage.getItem('telefono');
+
+        if(nombre == null || nombre == '' || apellidos == null || apellidos == '' || telefono == null || telefono == '' ){
+            document.getElementById('resultado').innerHTML = 'No hay resultado po wn';
+        }
+        else{
+            document.getElementById('resultado').innerHTML = nombre + ' ' + apellidos + ' ' + telefono;
+        }
+    }
+    function confirmar() {
+        var nombre = document.getElementById('nombre').value;
+        var apellidos = document.getElementById('apellidos').value;
+        var telefono = document.getElementById('telefono').value;
+
+        if(nombre == null || nombre == '' || apellidos == null || apellidos == '' || telefono == null || telefono == '' ){
+            document.getElementById('resultado').innerHTML = 'Todos los valores no son validos';
+        }
+        else{
+            localStorage.setItem('nombre', nombre);
+            localStorage.setItem('apellidos', apellidos);
+            localStorage.setItem('telefono', telefono);
+            document.getElementById('resultado').innerHTML = nombre + ' ' + apellidos + ' ' + telefono;
+        }
+
+
+    }
+</script>
+</body>
+</html>
